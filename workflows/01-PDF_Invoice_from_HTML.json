@@ -1,0 +1,121 @@
+{
+  "name": "PDF Invoice from HTML",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -440,
+        -40
+      ],
+      "id": "ebb8c764-cac1-4439-b1a4-e94695e91e99",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Invoice Template</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 0 auto;\n            padding: 20px;\n            line-height: 1.6;\n            color: #333;\n        }\n\n        .invoice-header {\n            display: flex;\n            justify-content: space-between;\n            align-items: flex-start;\n            margin-bottom: 40px;\n            border-bottom: 2px solid #e0e0e0;\n            padding-bottom: 20px;\n        }\n\n        .logo-placeholder {\n            width: 150px;\n            height: 80px;\n            background-color: #f0f0f0;\n            border: 2px dashed #ccc;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 14px;\n            color: #666;\n            text-align: center;\n        }\n\n        .invoice-info {\n            text-align: right;\n        }\n\n        .invoice-title {\n            font-size: 28px;\n            font-weight: bold;\n            margin: 0;\n            color: #2c3e50;\n        }\n\n        .invoice-number {\n            font-size: 16px;\n            margin: 5px 0;\n            color: #666;\n        }\n\n        .invoice-date {\n            font-size: 14px;\n            color: #666;\n        }\n\n        .billing-section {\n            display: flex;\n            justify-content: space-between;\n            margin-bottom: 40px;\n        }\n\n        .billing-info {\n            width: 45%;\n        }\n\n        .billing-info h3 {\n            margin-top: 0;\n            margin-bottom: 10px;\n            font-size: 16px;\n            color: #2c3e50;\n            border-bottom: 1px solid #e0e0e0;\n            padding-bottom: 5px;\n        }\n\n        .billing-info p {\n            margin: 5px 0;\n            font-size: 14px;\n        }\n\n        .invoice-table {\n            width: 100%;\n            border-collapse: collapse;\n            margin-bottom: 30px;\n        }\n\n        .invoice-table th {\n            background-color: #2c3e50;\n            color: white;\n            padding: 12px;\n            text-align: left;\n            font-weight: bold;\n        }\n\n        .invoice-table td {\n            padding: 10px 12px;\n            border-bottom: 1px solid #e0e0e0;\n        }\n\n        .invoice-table tr:nth-child(even) {\n            background-color: #f9f9f9;\n        }\n\n        .text-right {\n            text-align: right;\n        }\n\n        .text-center {\n            text-align: center;\n        }\n\n        .invoice-totals {\n            margin-left: auto;\n            width: 300px;\n        }\n\n        .total-row {\n            display: flex;\n            justify-content: space-between;\n            padding: 5px 0;\n            border-bottom: 1px solid #e0e0e0;\n        }\n\n        .total-row:last-child {\n            font-weight: bold;\n            font-size: 18px;\n            border-bottom: 2px solid #2c3e50;\n            padding-top: 10px;\n        }\n\n        .invoice-footer {\n            margin-top: 40px;\n            padding-top: 20px;\n            border-top: 1px solid #e0e0e0;\n            font-size: 12px;\n            color: #666;\n        }\n\n        .payment-terms {\n            margin-top: 20px;\n        }\n\n        .payment-terms h4 {\n            margin-bottom: 10px;\n            color: #2c3e50;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"invoice-header\">\n        <div class=\"logo-placeholder\">\n            LOGO PLACEHOLDER\n        </div>\n        <div class=\"invoice-info\">\n            <h1 class=\"invoice-title\">INVOICE</h1>\n            <p class=\"invoice-number\">Invoice #: INV-2024-001</p>\n            <p class=\"invoice-date\">Date: June 18, 2025</p>\n            <p class=\"invoice-date\">Due Date: July 18, 2025</p>\n        </div>\n    </div>\n\n    <div class=\"billing-section\">\n        <div class=\"billing-info\">\n            <h3>From:</h3>\n            <p><strong>Your Company Name</strong></p>\n            <p>123 Business Street</p>\n            <p>Vienna, Austria 1010</p>\n            <p>Email: info@company.com</p>\n            <p>Phone: +43 1 234 5678</p>\n        </div>\n\n        <div class=\"billing-info\">\n            <h3>To:</h3>\n            <p><strong>Client Company Name</strong></p>\n            <p>456 Client Avenue</p>\n            <p>City, Country 12345</p>\n            <p>Email: client@email.com</p>\n            <p>Phone: +1 234 567 8900</p>\n        </div>\n    </div>\n\n    <table class=\"invoice-table\">\n        <thead>\n            <tr>\n                <th>Description</th>\n                <th class=\"text-center\">Quantity</th>\n                <th class=\"text-right\">Unit Price</th>\n                <th class=\"text-right\">Total</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Process Automation Setup</td>\n                <td class=\"text-center\">1</td>\n                <td class=\"text-right\">€2,500.00</td>\n                <td class=\"text-right\">€2,500.00</td>\n            </tr>\n            <tr>\n                <td>Invoice Processing Integration</td>\n                <td class=\"text-center\">1</td>\n                <td class=\"text-right\">€1,800.00</td>\n                <td class=\"text-right\">€1,800.00</td>\n            </tr>\n            <tr>\n                <td>Chatbot Configuration</td>\n                <td class=\"text-center\">1</td>\n                <td class=\"text-right\">€1,200.00</td>\n                <td class=\"text-right\">€1,200.00</td>\n            </tr>\n            <tr>\n                <td>Testing and Documentation</td>\n                <td class=\"text-center\">8</td>\n                <td class=\"text-right\">€75.00</td>\n                <td class=\"text-right\">€600.00</td>\n            </tr>\n        </tbody>\n    </table>\n\n    <div class=\"invoice-totals\">\n        <div class=\"total-row\">\n            <span>Subtotal:</span>\n            <span>€6,100.00</span>\n        </div>\n        <div class=\"total-row\">\n            <span>VAT (20%):</span>\n            <span>€1,220.00</span>\n        </div>\n        <div class=\"total-row\">\n            <span>Total Amount:</span>\n            <span>€7,320.00</span>\n        </div>\n    </div>\n\n    <div class=\"payment-terms\">\n        <h4>Payment Terms:</h4>\n        <p>Payment is due within 30 days of invoice date. Please include the invoice number in your payment reference.</p>\n\n        <h4>Bank Details:</h4>\n        <p>Account Name: Your Company Name<br>\n        IBAN: AT12 3456 7890 1234 5678<br>\n        BIC: BANKCODE123<br>\n        Bank: Your Bank Name</p>\n    </div>\n\n    <div class=\"invoice-footer\">\n        <p>Thank you for your business! If you have any questions about this invoice, please contact us at info@company.com</p>\n    </div>\n</body>\n</html>"
+      },
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        -220,
+        -40
+      ],
+      "id": "cf2458ca-8b9b-4773-a402-ae6cd8800586",
+      "name": "Invoice Template"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://demo.gotenberg.dev/forms/chromium/convert/html",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "files",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a16d1d2c-3884-45b7-9921-41a388a18556",
+      "name": "HTML to PDF",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        240,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "=html",
+        "options": {
+          "dataIsBase64": false,
+          "encoding": "utf8",
+          "fileName": "index.html",
+          "mimeType": "text/html"
+        }
+      },
+      "id": "588afa56-e25b-4fd2-b306-d16cb54ea0ed",
+      "name": "Convert to HTML",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -40
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Invoice Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Invoice Template": {
+      "main": [
+        [
+          {
+            "node": "Convert to HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to HTML": {
+      "main": [
+        [
+          {
+            "node": "HTML to PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f585cfe3-e2c3-4a0c-a340-81175a9cf204",
+  "meta": {
+    "instanceId": "c8eccebf613cc88116af005577ca98256739bbc58dc85f93bce4484e824b657c"
+  },
+  "id": "iAoTDZy8h9NNsxoe",
+  "tags": []
+}
